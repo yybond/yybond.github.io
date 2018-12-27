@@ -1,0 +1,45 @@
+html {
+  height: 100%;
+}
+
+body {
+    text-align: center;
+    color: #003366;
+    font-family: "Courier New";
+    background: white;
+}
+
+p {
+  font-size: 22px;
+}
+
+button {
+    background-color: #004080;
+    border: none;
+    color: #cce6ff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-family: "Courier New";
+    border-radius: 2px;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+a.button {
+    background-color: #004080;
+    border: none;
+    color: #cce6ff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-family: "Courier New";
+    border-radius: 2px;
+}
