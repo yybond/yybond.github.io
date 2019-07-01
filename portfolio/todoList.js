@@ -1,60 +1,24 @@
-function TodoList(options) {
-    this.$el = options.element;
-    this._todos = []
+function calculate() {
+    var bill;
+    var tip;
+    var tipAmount;
+    var tipAmountPerPerson;
+    var split;
+    var result;
 
+    bill = document.getElementById('amountValue').value;
+    bill = parseInt(bill);
 
-    this.$form = this.$el.querySelector('[data-selector="form"]')
-    this.$list = this.$el.querySelector('[data-selector="list"]')
+    tip = document.getElementById('tipValue').value;
+    tip = parseInt(tip);
 
-    this.$form.addEventListener('submit', this._submitHandler.bind(this))
+    split = document.getElementById('splitValue').value;
+    split = parseInt(split);
 
-    this.$el.addEventListener('click', this._removeClickHandler.bind(this))
-}
+    tipAmount = bill / (100 * tip);
+    tipAmountPerPerson = tipAmount / split;
+    result = bill + tipAmount;
 
+    document.getElementById('outResult').innerHTML = result;
 
-TodoList.prototype.add = function (todo) {
-    const li = document.createElement('li')
-    const button = document.createElement('button');
-
-    button.innerHTML = '&#x2715'
-    button.className = 'btn btn-link'
-    button.type = 'button'
-
-    li.className = 'list-group-item d-flex justify-content-between'
-    li.textContent = todo
-
-    this._todos.unshift(todo)
-    li.appendChild(button)
-
-    this.$list.insertAdjacentElement('afterbegin', li);
-}
-
-TodoList.prototype.remove = function (element) {
-    const indexToRemove = this._todos.findIndex(function (entry) {
-        return entry === element.textContent;
-    })
-
-    this._todos.splice(indexToRemove, 1)
-    this.$list.removeChild(element)
-
-}
-
-TodoList.prototype._submitHandler = function (event) {
-    event.preventDefault();
-
-    this.add(this.$form.todo.value)
-
-    this.$form.reset()
-}
-
-
-TodoList.prototype._removeClickHandler = function (event) {
-    if (event.target.tagName !== 'BUTTON') {
-        return;
-    }
-
-
-    const elementToDelete = event.target.closest('li')
-
-    this.remove(elementToDelete)
 }
