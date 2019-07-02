@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:font-size="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="row justify-content-md-center mt-4">
+            <div data-component="calculator" class="card col col-lg-4">
+                <h3 class="card-header">Tip Calculator</h3>
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="billAmount">Bill amount:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupPrepend1">$</span>
+                                </div>
+                                <input type="number"
+                                       min="1"
+                                       class="form-control"
+                                       id="billAmount"
+                                       placeholder="Enter your amount..."
+                                       aria-describedby="inputGroupPrepend1">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="serviceQuality">Tip:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupPrepend2">%</span>
+                                </div>
+                                <input type="number"
+                                       min="1"
+                                       class="form-control"
+                                       id="serviceQuality"
+                                       placeholder="Enter the % of tip..."
+                                       value="10"
+                                       aria-describedby="inputGroupPrepend2">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="totalPeople">Split bill between:</label>
+                            <input type="number"
+                                   min="1"
+                                   class="form-control"
+                                   id="totalPeople"
+                                   placeholder="Enter the number of..."
+                                   value="1">
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary btn-block"
+                                type="button" id="calculate">Calculate</button>
+                    </div>
+                    <p></p>
+                    <div id="totalTip">
+                        <h5 class="card-title">Result:</h5>
+                        <sup>$</sup><span id="tip">0.00</span>
+                        <small id="each">each</small>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div> <!-- container -->
+</body>
+</html>
